@@ -1,5 +1,9 @@
 package com.lxj.dao;
 
+import java.util.List;
+
 public interface BaseDao {
-  public <T> void add(String sql,Object...params);
+  public <T> void crud(String sql,Object...params);
+  public List<?> getpageList(String sql,Object...params);
+  public int getCount(String sql);
 }

@@ -1,5 +1,7 @@
 package com.lxj.service.Impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,8 +15,39 @@ public class UserServiceImpl implements UserService{
     private UserDao userDao;
 	@Override
 	public boolean addUser(User user) {
-		userDao.addUser(user);
-		return true;
+		try{
+			userDao.addUser(user);
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
+	@Override
+	public List<User> getUserListByPage(int pageNo, int pageSize) {
+		return userDao.getUserList(pageNo, pageSize);
+	}
+	@Override
+	public int getTotal() {
+		return userDao.getCount();
+	}
+	@Override
+	public boolean updateUser(User user) {
+		try{
+			userDao.updateUser(user);
+			return true;
+		}catch(Exception e){
+			return false;
+		}
+	}
+	@Override
+	public boolean deleteUser(int id) {
+		try{
+			userDao.deleteUser(id);
+			return true;
+		}catch(Exception e){
+			System.out.println(e.getStackTrace());
+			return false;
+		}
 	}
 
 
