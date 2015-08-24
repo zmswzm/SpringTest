@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService{
 			userDao.deleteUser(id);
 			return true;
 		}catch(Exception e){
-			System.out.println(e.getStackTrace());
+			System.out.println(e.getStackTrace().toString());
 			return false;
 		}
 	}
