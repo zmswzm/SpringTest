@@ -13,6 +13,7 @@
 	 }else{
 		 alert("验证不通过！");
 	 }
+	 
  }
 </script>
 </head>
