@@ -13,8 +13,8 @@ public  class UserDaoImpl extends BaseDaoImpl implements UserDao {
 	
 	@Override
 	public void addUser(User user) {
-		String sql = "insert into user(name,phone,email) values (?,?,?) ";
-		Object[] params = {user.getName(),user.getPhone(),user.getEmail()};
+		String sql = "insert into user(id,name,phone,email) values (?,?,?,?) ";
+		Object[] params = {user.getId(),user.getName(),user.getPhone(),user.getEmail()};
 		crud(sql, params);
 	}
 
