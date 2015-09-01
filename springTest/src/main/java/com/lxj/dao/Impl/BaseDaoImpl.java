@@ -28,6 +28,7 @@ public class BaseDaoImpl implements BaseDao {
 		return jdbcTemplate.queryForInt(sql);
 	}
 	
+	
     
 	
 }
