@@ -2,19 +2,35 @@
     pageEncoding="UTF-8"%>
 <%@include file="include.jsp"%>
 <body>
+<div></div>
+      <div id="tb" style="padding:2px 5px;">
+        Date From: <input class="easyui-datebox" style="width:110px">
+        To: <input class="easyui-datebox" style="width:110px">
+        Language: 
+        <select class="easyui-combobox" panelHeight="auto" style="width:100px">
+            <option value="java">Java</option>
+            <option value="c">C</option>
+            <option value="basic">Basic</option>
+            <option value="perl">Perl</option>
+            <option value="python">Python</option>
+        </select>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search">Search</a>
+    </div>
     <table id="dg" title="用户列表" class="easyui-datagrid" style="width:700px;height:380px"
             url="<%=basePath %>/user/userListExe.do"
             toolbar="#toolbar" pagination="true"
             rownumbers="true" fitColumns="true" singleSelect="true">
+            
         <thead>
             <tr>
-                <th field="id" width="50">编号</th>
+                <th field="id" width="150">编号</th>
                 <th field="name" width="50">姓名</th>
                 <th field="phone" width="50">电话</th>
                 <th field="email" width="50">邮箱</th>
             </tr>
         </thead>
     </table>
+    
     <div id="toolbar">
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">New User</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Edit User</a>
@@ -35,7 +51,7 @@
             </div>
             <div class="fitem">
                 <label>Email:</label>
-                <input name="email" class="easyui-textbox" validType="email">
+                <input name="email" class="easyui-textbox" >
             </div>
         </form>
     </div>
